@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Роберт Ширенян - Unity Developer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <style>
+        /* Шрифты и иконки из оригинального шаблона Elegant */
+        @font-face {
+            font-family: 'icomoon';
+            src: url('https://unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.eot');
+            src: url('https://unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+            url('https://unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.ttf') format('truetype'),
+            url('https://unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.woff') format('woff'),
+            url('https://unpkg.com/jsonresume-theme-elegant@1.12.0/assets/icomoon/fonts/icomoon.svg#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        [class^="icon-"], [class*=" icon-"] {
+            font-family: 'icomoon' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Стили иконок */
+        .icon-github:before { content: "\f09b"; }
+        .icon-linkedin:before { content: "\f08c"; }
+        .icon-telegram:before { content: "\e904"; }
+        .icon-office:before { content: "\e606"; }
+        .icon-code:before { content: "\f121"; }
+        .icon-tools:before { content: "\e034"; }
+        .icon-graduation-cap:before { content: "\f19d"; }
+        .icon-heart:before { content: "\f004"; }
+        .icon-location:before { content: "\e602"; }
+        .icon-phone:before { content: "\e03f"; }
+        .icon-mail:before { content: "\e603"; }
+        .icon-language:before { content: "\f1ab"; }
+        .icon-clock:before { content: "\e60a"; }
+        .icon-bars:before { content: "\f0c9"; }
+        
+        /* Основные стили страницы */
+        body { font-family: 'Lato', sans-serif; background: #f0f0f0; color: #333; }
+        .main { padding: 5px; }
+        .card { background: white; border: 1px solid #e6e6e6; border-radius: 3px; min-height: 300px; padding: 10px 0; }
+        .card-nested { min-height: 0; border-width: 1px 0 0 0; padding: 10px 0; }
+        .card-wrapper { padding: 5px; }
+        .profile-card { padding: 10px; text-align: center; }
+        .profile-pic img { width: 100px; height: 100px; border-radius: 50%; }
+        .name-and-profession { margin-top: 10px; }
+        .contact-details .detail { display: table; width: 100%; padding: 5px 0; text-align: left; }
+        .contact-details .detail .icon { display: table-cell; width: 30px; color: #707070; text-align: center; }
+        .contact-details .detail .info { display: table-cell; padding-left: 10px; }
+        .social-links { margin-top: 20px; }
+        .social-link { font-size: 2em; margin: 0 10px; color: #333; }
+        .social-link:hover { text-decoration: none; color: #357ebd; }
+        
+        .background-card { padding: 10px 20px; }
+        .background-details .detail { display: table; width: 100%; margin-bottom: 20px; }
+        .background-details .detail .icon { display: table-cell; width: 50px; vertical-align: top; font-size: 2em; color: #707070; }
+        .background-details .detail .info { display: table-cell; padding-left: 10px; }
+        .mop-wrapper { margin-bottom: 10px; }
+        
+        /* Скиллы */
+        .card-skills { position: relative; padding-left: 20px; }
+        .skill-level { position: absolute; top: 10px; bottom: 10px; left: 0; width: 5px; background: #eee; }
+        .skill-level .skill-progress { position: absolute; bottom: 0; width: 100%; }
+        .skill-progress.advanced { height: 80%; background: #5cb85c; }
+        .skill-progress.intermediate { height: 60%; background: #f1c40f; }
+        .skill-progress.beginner { height: 30%; background: #e74c3c; }
+        .labels .label-keyword { display: inline-block; background: #7eb0db; color: white; padding: 3px 6px; border-radius: 3px; margin: 2px; font-size: 0.9em; }
+
+        /* Навигация */
+        .floating-nav-trigger { position: fixed; bottom: 10px; right: 10px; width: 50px; height: 50px; background: white; border-radius: 50%; text-align: center; line-height: 50px; font-size: 1.5em; box-shadow: 0 1px 4px rgba(0,0,0,0.3); z-index: 100; color: #357ebd; cursor: pointer; }
+        .floating-nav { position: fixed; bottom: 70px; right: 10px; background: white; width: 200px; display: none; box-shadow: 0 1px 4px rgba(0,0,0,0.3); z-index: 99; }
+        .floating-nav.is-visible { display: block; }
+        .floating-nav ul { list-style: none; padding: 0; margin: 0; }
+        .floating-nav li a { display: block; padding: 10px 15px; border-bottom: 1px solid #eee; color: #357ebd; text-decoration: none; }
+        .floating-nav li a:hover { background: #f9f9f9; }
+
+        @media print {
+            .floating-nav-trigger, .floating-nav { display: none; }
+            .col-md-3, .col-md-9 { float: none; width: 100%; }
+            .card { border: none; }
+        }
+    </style>
+</head>
+<body itemscope="itemscope" itemtype="http://schema.org/Person">
+
+<div class="container-fluid">
+    <div class="row main clearfix">
+        
+        <a class="js-floating-nav-trigger floating-nav-trigger" href="#"><i class="icon-bars"></i></a>
+        <nav class="floating-nav js-floating-nav">
+            <ul>
+                <li><a href="#work-experience">Опыт работы</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#education">Образование</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#interests">Интересы</a></li>
+            </ul>
+        </nav>
+
+        <section class="col-md-3 card-wrapper profile-card-wrapper affix-top">
+            <div class="card profile-card">
+                <div class="profile-pic">
+                    <img class="media-object img-circle center-block" alt="Роберт Ширенян" src="path/to/your/photo.jpg" itemprop="image"/>
+                </div>
+                <div class="name-and-profession text-center">
+                    <h3 itemprop="name"><b>Роберт Ширенян</b></h3>
+                    <h5 class="text-muted" itemprop="jobTitle">Разработчик ПО / Unity Dev</h5>
+                </div>
+                <hr/>
+                <div class="contact-details clearfix">
+                    <div class="detail">
+                        <span class="icon"><i class="icon fs-lg icon-location"></i></span>
+                        <span class="info">Пятигорск, Россия</span>
+                    </div>
+                    <div class="detail">
+                        <span class="icon"><i class="icon fs-lg icon-phone"></i></span>
+                        <span class="info" itemprop="telephone">+7 (961) 462-32-53</span>
+                    </div>
+                    <div class="detail">
+                        <span class="icon"><i class="icon fs-lg icon-mail"></i></span>
+                        <span class="info"><a href="mailto:rob_shirenyan@mail.ru" itemprop="email">rob_shirenyan@mail.ru</a></span>
+                    </div>
+                </div>
+                <hr/>
+                <div class="social-links text-center">
+                    <a class="social-link icon-github" href="https://github.com/gitusez" target="_blank" title="Github"></a>
+                    <a class="social-link icon-telegram" href="https://t.me/internetviewer" target="_blank" title="Telegram"></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-md-9 card-wrapper pull-right">
+            <div class="card background-card">
+                <h4 class="text-uppercase">Обо мне</h4>
+                <p>Активно развиваюсь в области геймдев-разработки и веб-технологий, стремлюсь к созданию качественных, современных и интересных цифровых продуктов. Опыт создания сайтов, Telegram Mini Apps и игр для Яндекс Игр.</p>
+                <hr/>
+
+                <div class="background-details">
+                    
+                    <div class="detail" id="work-experience">
+                        <div class="icon"><i class="fs-lg icon-office"></i></div>
+                        <div class="info">
+                            <h4 class="title text-uppercase">Опыт работы</h4>
+                            <ul class="list-unstyled clear-margin">
+                                <li class="card-nested clearfix">
+                                    <div class="content">
+                                        <p class="clear-margin relative"><strong>Веб-разработчик</strong>, Фриланс / Проектная деятельность</p>
+                                        <p class="text-muted"><small>Январь 2023 - Настоящее время</small></p>
+                                        <div class="mop-wrapper space-bottom">
+                                            <p>Разработка сайта для аренды автомобилей (г. Пятигорск) и Telegram Mini App.</p>
+                                        </div>
+                                        <div class="labels">
+                                            <span class="label-keyword">HTML</span>
+                                            <span class="label-keyword">JS</span>
+                                            <span class="label-keyword">CRM Integration</span>
+                                            <span class="label-keyword">Telegram Mini Apps</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="card-nested clearfix">
+                                    <div class="content">
+                                        <p class="clear-margin relative"><strong>Unity Developer</strong>, Indie Game Development</p>
+                                        <p class="text-muted"><small>Январь 2022 - Настоящее время</small></p>
+                                        <div class="mop-wrapper space-bottom">
+                                            <p>Создание 2D и 3D игр для платформы Яндекс Игры.</p>
+                                        </div>
+                                        <ul>
+                                            <li>Работа с игровыми механиками</li>
+                                            <li>Разработка UI интерфейсов</li>
+                                            <li>Настройка анимации и звука</li>
+                                            <li>Публикация проектов на платформе</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail" id="projects">
+                        <div class="icon"><i class="fs-lg icon-code"></i></div>
+                        <div class="info">
+                            <h4 class="title text-uppercase">Проекты</h4>
+                            <ul class="list-unstyled clear-margin">
+                                <li class="card-nested clearfix">
+                                    <div class="content">
+                                        <p class="clear-margin relative"><strong>Сайт аренды авто + Telegram Mini App</strong></p>
+                                        <p>Сервис для аренды автомобилей в Пятигорске с интеграцией CRM.</p>
+                                        <div class="labels">
+                                            <span class="label-keyword">HTML/CSS/JS</span>
+                                            <span class="label-keyword">Real-time Data</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="card-nested clearfix">
+                                    <div class="content">
+                                        <p class="clear-margin relative"><strong>Игры на Unity</strong></p>
+                                        <p>Серия игр, опубликованных на платформе Яндекс Игры.</p>
+                                        <div class="labels">
+                                            <span class="label-keyword">Full Cycle Dev</span>
+                                            <span class="label-keyword">Yandex SDK</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail" id="skills">
+                        <div class="icon"><i class="fs-lg icon-tools"></i></div>
+                        <div class="info">
+                            <h4 class="title text-uppercase">Навыки</h4>
+                            <ul class="list-unstyled clear-margin">
+                                <li class="card-nested card-skills">
+                                    <div class="skill-level" title="Advanced"><div class="skill-progress advanced"></div></div>
+                                    <div class="skill-info">
+                                        <strong>Game Development</strong>
+                                        <div class="labels">
+                                            <span class="label-keyword">Unity 2D/3D</span>
+                                            <span class="label-keyword">C#</span>
+                                            <span class="label-keyword">Анимация</span>
+                                            <span class="label-keyword">Звук</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="card-nested card-skills">
+                                    <div class="skill-level" title="Intermediate"><div class="skill-progress intermediate"></div></div>
+                                    <div class="skill-info">
+                                        <strong>Programming Languages</strong>
+                                        <div class="labels">
+                                            <span class="label-keyword">C++</span>
+                                            <span class="label-keyword">Java</span>
+                                            <span class="label-keyword">JavaScript</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="card-nested card-skills">
+                                    <div class="skill-level" title="Intermediate"><div class="skill-progress intermediate"></div></div>
+                                    <div class="skill-info">
+                                        <strong>Web Development</strong>
+                                        <div class="labels">
+                                            <span class="label-keyword">HTML/CSS</span>
+                                            <span class="label-keyword">React</span>
+                                            <span class="label-keyword">Angular</span>
+                                            <span class="label-keyword">TG Apps</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail" id="education">
+                        <div class="icon"><i class="fs-lg icon-graduation-cap"></i></div>
+                        <div class="info">
+                            <h4 class="title text-uppercase">Образование</h4>
+                            <ul class="list-unstyled clear-margin">
+                                <li class="card-nested clearfix">
+                                    <div class="content">
+                                        <p class="clear-margin relative"><strong>Разработка ПО</strong></p>
+                                        <p>ММКЦТ «АКАДЕМИЯ ТОП»</p>
+                                        <p class="text-muted"><small>202X - 202X</small></p>
+                                        <div class="labels">
+                                            <span class="label-keyword">C++</span>
+                                            <span class="label-keyword">C#</span>
+                                            <span class="label-keyword">Java</span>
+                                            <span class="label-keyword">Unity</span>
+                                            <span class="label-keyword">SQL</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail" id="interests">
+                        <div class="icon"><i class="fs-lg icon-heart"></i></div>
+                        <div class="info">
+                            <h4 class="title text-uppercase">Интересы</h4>
+                            <div class="content">
+                                <ul class="list-unstyled clear-margin">
+                                    <li class="card-nested">
+                                        <p>Геймдев, Веб-технологии, Компьютерные игры, Кино</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+$(function () {
+    var toggleFloatingMenu = function() {
+        $( '.js-floating-nav' ).toggleClass( 'is-visible' );
+        $( '.js-floating-nav-trigger' ).toggleClass( 'is-open' );
+    };
+
+    $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
+    
+    $( '.js-floating-nav-trigger' ).on( 'click', function(e) {
+        e.preventDefault();
+        toggleFloatingMenu();
+    });
+    $( '.js-floating-nav a' ).on( 'click', toggleFloatingMenu );
+});
+</script>
+
+<script type="application/json" id="resume-data">
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Роберт Ширенян",
+    "label": "Разработчик программного обеспечения / Unity Dev",
+    "email": "rob_shirenyan@mail.ru",
+    "phone": "+7 (961) 462-32-53",
+    "summary": "Активно развиваюсь в области геймдев-разработки...",
+    "location": { "city": "Пятигорск", "countryCode": "RU" },
+    "profiles": [
+      { "network": "Github", "username": "gitusez", "url": "https://github.com/gitusez" },
+      { "network": "Telegram", "username": "internetviewer", "url": "https://t.me/internetviewer" }
+    ]
+  }
+  // Полный JSON можно оставить здесь, но для статики он уже не критичен
+}
+</script>
+
+</body>
+</html>

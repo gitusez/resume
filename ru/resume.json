@@ -1,0 +1,138 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Роберт Ширенян",
+    "label": "Разработчик программного обеспечения / Unity Dev",
+    "image": "path/to/your/photo.jpg",
+    "email": "rob_shirenyan@mail.ru",
+    "phone": "+7 (961) 462-32-53",
+    "url": "https://your-website.com",
+    "summary": "Активно развиваюсь в области геймдев-разработки и веб-технологий, стремлюсь к созданию качественных, современных и интересных цифровых продуктов. Опыт создания сайтов, Telegram Mini Apps и игр для Яндекс Игр.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Пятигорск",
+      "countryCode": "RU",
+      "region": "Россия"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "yourusername",
+        "url": "https://github.com/gitusez"
+      },
+      {
+        "network": "Telegram",
+        "username": "yourusername",
+        "url": "https://t.me/internetviewer"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Фриланс / Проектная деятельность",
+      "position": "Веб-разработчик",
+      "startDate": "2023-01-01",
+      "summary": "Разработка сайта для аренды автомобилей (г. Пятигорск) и Telegram Mini App.",
+      "highlights": [
+        "Разработка сайта и мини-приложения Telegram",
+        "Использованы HTML + JS (до перехода на React)",
+        "Интеграция с CRM-системой для актуального учета автомобилей"
+      ]
+    },
+    {
+      "name": "Indie Game Development",
+      "position": "Unity Developer",
+      "startDate": "2022-01-01",
+      "summary": "Создание 2D и 3D игр для платформы Яндекс Игры.",
+      "highlights": [
+        "Работа с игровыми механиками",
+        "Разработка UI интерфейсов",
+        "Настройка анимации и звука",
+        "Публикация проектов на платформе"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "АВТОНОМНАЯ НЕКОММЕРЧЕСКАЯ ОРГАНИЗАЦИЯ ПРОФЕССИОНАЛЬНАЯ ОБРАЗОВАТЕЛЬНАЯ ОРГАНИЗАЦИЯ МОСКОВСКИЙ МЕЖДУНАРОДНЫЙ КОЛЛЕДЖ ЦИФРОВЫХ ТЕХНОЛОГИЙ «АКАДЕМИЯ ТОП» (АНО ПОО ММКЦТ «АКАДЕМИЯ ТОП»)",
+      "area": "Разработка программного обеспечения",
+      "studyType": "Студент",
+      "startDate": "202X-09-01",
+      "endDate": "202X-07-01",
+      "courses": [
+        "C++",
+        "C#",
+        "Java",
+        "JavaScript",
+        "Unity (2D и 3D)",
+        "SQL"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Game Development",
+      "level": "Advanced",
+      "keywords": [
+        "Unity 2D",
+        "C#",
+        "Анимация",
+        "Звук"
+      ]
+    },
+    {
+      "name": "Programming Languages",
+      "level": "Intermediate",
+      "keywords": [
+        "C++",
+        "C#",
+        "Java",
+        "JavaScript"
+      ]
+    },
+    {
+      "name": "Web Development",
+      "level": "Intermediate",
+      "keywords": [
+        "HTML/CSS",
+        "React",
+        "Angular",
+        "Telegram Mini Apps"
+      ]
+    },
+    {
+      "name": "Database & Tools",
+      "level": "Intermediate",
+      "keywords": [
+        "MySQL",
+        "Git",
+        "CRM Integration"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Сайт аренды авто + Telegram Mini App приложение аренды авто",
+      "description": "Сервис для аренды автомобилей в Пятигорске с интеграцией CRM.",
+      "highlights": [
+        "HTML, CSS, JS",
+        "Интеграция данных в реальном времени"
+      ],
+      "url": "https://ссылка-на-проект.com"
+    },
+    {
+      "name": "Игры на Unity",
+      "description": "Серия игр, опубликованных на платформе Яндекс Игры.",
+      "highlights": [
+        "Полный цикл разработки",
+        "Внедрение SDK Яндекс Игр"
+      ]
+    }
+  ],
+  "interests": [
+    {
+      "name": "Геймдев, Веб-технологии"
+    }
+  ]
+}
